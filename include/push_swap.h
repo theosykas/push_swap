@@ -6,26 +6,79 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:29:55 by theo              #+#    #+#             */
-/*   Updated: 2025/05/30 19:23:12 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/02 15:53:40 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# define INT_MIN -2147483648
+# define INT_MAX 2147483647
+
+# define
+# define
+
 # include "libft/libft.h"
 # include <stdio.h>
 # include <unistd.h>
+# include <stdlib.h>
 
-typedef struct	s_swap
+//pour contenir les infos globals
+typedef struct	s_node
 {
-	int	swap;
-}	t_swap;
+	int				value; //valeur a trier
+	struct s_node	*next; // element suivant dans la pile
+}	t_node;
+
+// pour gerer pile a et b
+typedef struct	s_stack
+{
+	t_node	*a;
+	t_node	*b;
+	int		size_a;
+	int		size_b;
+}	t_stack;
+
+typedef struct push_swap
+{
+	
+}	;
+
 
 /*utils.c*/
+void	free_stack(t_stack *stack);
+
+/*main*/
+int	main(int ac, char **av);
 
 /*swap.c*/
-int	main(int ac, char **av);
+void	sa(t_stack *stack);
+void	sb(t_stack *stack);
+void	ss(t_stack *stack);
+
+/*rotate.c*/
+void	ra(t_stack *stack);
+void	rb(t_stack *stack);
+void	rr(t_stack *stack);
+
+/*rev_rotate.c*/
+void	rra(t_stack *stack);
+void	rrb(t_stack *stack);
+void	rrr(t_stack *stack);
+
+/*check_error.c*/
+void	free_exit(t_stack *stack);
+void	print_error(char *msg);
+
+/*push.c*/
+void	pa(t_stack *stack);
+void	pb(t_stack *stack);
+
+/*init.c*/
+t_node	*create_node(int value);
+void	init_stack(t_stack *stack);
+void	add_back(t_node **stack, t_node *new_element); // double ** == modifif
 
 #endif
 
