@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:29:55 by theo              #+#    #+#             */
-/*   Updated: 2025/06/02 15:53:40 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/02 16:23:18 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	pb(t_stack *stack);
 /*init.c*/
 t_node	*create_node(int value);
 void	init_stack(t_stack *stack);
-void	add_back(t_node **stack, t_node *new_element); // double ** == modifif
+void	add_node(t_node **stack, t_node *new_element); // double ** == modifif
 
 #endif
 
