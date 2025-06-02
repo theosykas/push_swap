@@ -6,20 +6,18 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:29:55 by theo              #+#    #+#             */
-/*   Updated: 2025/06/02 16:50:56 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/02 17:45:37 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# define INT_MIN -2147483648
-# define INT_MAX 2147483647
-
-# define
-# define
+//# define INT_MIN -2147483648
+//# define INT_MAX 2147483647
 
 # include "libft/libft.h"
+# include <limits.h> // pour int min et max 
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
