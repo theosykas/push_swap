@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:29:55 by theo              #+#    #+#             */
-/*   Updated: 2025/06/02 16:23:18 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/02 16:50:56 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	rrr(t_stack *stack);
 
 /*check_error.c*/
 void	free_exit(t_stack *stack);
-void	print_error(char *msg);
+void	exit_and_free(t_node **node, t_stack **stack);
 
 /*push.c*/
 void	pa(t_stack *stack);

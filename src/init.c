@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 15:12:34 by theo              #+#    #+#             */
-/*   Updated: 2025/06/02 16:23:29 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/02 16:50:07 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	add_node(t_node **stack, t_node *new_element)
 	t_node	*tmp;
 	
 	if (!new_element)
-		return ;
+		return (EXIT_FAILURE);
 	if (*stack == NULL)
 	{
 		*stack = new_element;
