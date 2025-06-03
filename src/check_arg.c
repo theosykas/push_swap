@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 16:26:22 by theo              #+#    #+#             */
-/*   Updated: 2025/06/03 16:07:58 by theo             ###   ########.fr       */
+/*   Created: 2025/06/03 15:24:49 by theo              #+#    #+#             */
+/*   Updated: 2025/06/03 15:53:01 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	main(int ac, char **av)
+int	is_digit_or_sign(char c)
 {
-	if (ac < 2)
-		exit_and_free(NULL, NULL); // 2 param node stack tout a null
-	t_stack *stack = calloc(1, sizeof(t_stack));
-	if (!stack)
-		exit_and_free (NULL, stack);
-	init_stack(stack);
-	return (EXIT_SUCCESS);
+	return ((c >= '0' && c <= '9') || c == '+' || c == '-');
+}
+
+int	is_valid_num(char *str)
+{
+	if (!*str || !str)
+		return (0);
+	if (*str == '+' || *str == '-')
+		str++;
+	if (!(*str >= '0' && *str <= '9')) // 1 chiffre apres le sign signie return (0)
+		return (0);
+	while (*str)
+	{
+		if (*str < '0' || *str > '9')
+			return (0);
+		str++;
+	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 15:12:34 by theo              #+#    #+#             */
-/*   Updated: 2025/06/02 16:50:07 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/03 15:19:14 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	init_stack(t_stack *stack)
 }
 
 /*ajouter un node a la fin d'une pile ou si elle est NULL l'ajouter au debut */
-void	add_node(t_node **stack, t_node *new_element)
+int	add_node(t_node **stack, t_node *new_element)
 {
 	t_node	*tmp;
 	

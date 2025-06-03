@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:29:55 by theo              #+#    #+#             */
-/*   Updated: 2025/06/02 17:45:37 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/03 15:53:09 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,11 @@ typedef struct push_swap
 
 /*utils.c*/
 void	free_stack(t_stack *stack);
+void	check_arg(t_stack *stack, t_node *node);
+
+/*check_arg.c*/
+int	is_digit_or_sign(char c);
+int	is_valid_num(char *str);
 
 /*main*/
 int	main(int ac, char **av);
@@ -76,7 +81,7 @@ void	pb(t_stack *stack);
 /*init.c*/
 t_node	*create_node(int value);
 void	init_stack(t_stack *stack);
-void	add_node(t_node **stack, t_node *new_element); // double ** == modifif
+int		add_node(t_node **stack, t_node *new_element); // double ** == modifif
 
 #endif
 
