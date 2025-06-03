@@ -4,7 +4,7 @@ INCLUDE_DIR = include
 LIBFT_DIR = $(INCLUDE_DIR)/libft
 
 NAME = push_swap
-SRCS = $(wilcard $(SRC_DIR)/*.c)
+SRCS = $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(SRCS:.c=.o)
 LIBFT_A = $(LIBFT_DIR)/libft.a
 

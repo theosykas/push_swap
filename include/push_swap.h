@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:29:55 by theo              #+#    #+#             */
-/*   Updated: 2025/06/03 15:53:09 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/03 16:21:00 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ typedef struct	s_stack
 	int		size_b;
 }	t_stack;
 
-typedef struct push_swap
+/*typedef struct push_swap
 {
 	
-}	;
+}	;*/
 
 
 /*utils.c*/
@@ -72,7 +72,7 @@ void	rrr(t_stack *stack);
 
 /*check_error.c*/
 void	free_exit(t_stack *stack);
-void	exit_and_free(t_node **node, t_stack **stack);
+void	exit_and_free(t_node *node, t_stack *stack);
 
 /*push.c*/
 void	pa(t_stack *stack);

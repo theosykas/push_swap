@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 15:12:34 by theo              #+#    #+#             */
-/*   Updated: 2025/06/03 16:14:35 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/03 16:23:08 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 a la pile on utilise cette fonction pour le noeud correspondant*/
 t_node	*create_node(int value)
 {
-	t_node	*new;
-
 	t_node *new = calloc(1, sizeof(t_node));
 	if (!new)
 		return (NULL);
@@ -46,7 +44,7 @@ int	add_node(t_node **stack, t_node *new_element)
 	if (*stack == NULL)
 	{
 		*stack = new_element;
-		return ;
+		return (EXIT_SUCCESS);
 	}
 	tmp = *stack;
 	while (tmp->next) // tant que le pro element existe on parcours
@@ -54,4 +52,5 @@ int	add_node(t_node **stack, t_node *new_element)
 		tmp = tmp->next;
 	}
 	tmp->next = new_element;
+	return (EXIT_SUCCESS);
 }
