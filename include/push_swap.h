@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:29:55 by theo              #+#    #+#             */
-/*   Updated: 2025/06/03 16:21:00 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/04 21:28:49 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 typedef struct	s_node
 {
 	int				value; //valeur a trier
+	int *current;
+	int	*checker;
 	struct s_node	*next; // element suivant dans la pile
 }	t_node;
 

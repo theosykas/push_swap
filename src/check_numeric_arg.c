@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_arg.c                                        :+:      :+:    :+:   */
+/*   check_numeric_arg.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 15:24:49 by theo              #+#    #+#             */
-/*   Updated: 2025/06/03 15:53:01 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/04 21:31:21 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,26 @@ int	is_valid_num(char *str)
 		str++;
 	}
 	return (1);
+}
+
+int	has_duplicates(t_node *stack) // stack : parcours la liste
+{
+	t_node	*current; // parcours chaques node
+	t_node	*checker; // parcours chaques pos de current et cmp
+
+	if (stack == NULL)
+		return (0);
+	current = stack;
+	while (current)
+	{
+		checker = current->next;
+		while (checker)
+		{
+			checker = checker->next;
+			if (current->value == checker->value) // valu sinion 2 pointer a NULL
+				return (1);
+		}
+		current = current->next;
+	}
+	return (0);
 }

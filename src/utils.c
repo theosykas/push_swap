@@ -6,8 +6,12 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:29:51 by theo              #+#    #+#             */
-/*   Updated: 2025/05/30 18:34:40 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/04 21:29:54 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+/*fonction de doublons */
+
+/*liste deja trier */
