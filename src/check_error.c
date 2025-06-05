@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 15:12:40 by theo              #+#    #+#             */
-/*   Updated: 2025/06/05 19:22:41 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/05 19:30:23 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	exit_and_free(t_node *node, t_stack *stack)
 /*libere tout les node de la liste en entier */
 int	free_stack(t_stack *stack)
 {
-	if (stack == NULL)
+	if (!stack)
 		return (1);
 	free_node(stack->a);
 	free_node(stack->b);

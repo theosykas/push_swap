@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 19:22:03 by theo              #+#    #+#             */
-/*   Updated: 2025/06/05 19:22:27 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/05 19:32:10 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	is_limit_int(char *str)
 	return (0);
 }
 
-/*long int*/
+/*long_int*/
 long	atol_long_int(const char *str)
 {
 	int	res;
@@ -46,5 +46,5 @@ long	atol_long_int(const char *str)
 	{
 		res = sign * 10 + (*str - '0');
 	}
-	return (res, sign);
+	return (res * sign);
 }
