@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 16:26:22 by theo              #+#    #+#             */
-/*   Updated: 2025/06/03 16:07:58 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/05 18:22:06 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	main(int ac, char **av)
 	t_stack *stack = calloc(1, sizeof(t_stack));
 	if (!stack)
 		exit_and_free (NULL, stack);
+	if (has_duplicates (stack->a))
+		exit_and_free(stack->a, stack);
 	init_stack(stack);
 	return (EXIT_SUCCESS);
 }

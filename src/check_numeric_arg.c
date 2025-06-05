@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 15:24:49 by theo              #+#    #+#             */
-/*   Updated: 2025/06/04 21:31:21 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/05 18:40:37 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,16 @@ int	has_duplicates(t_node *stack) // stack : parcours la liste
 	t_node	*checker; // parcours chaques pos de current et cmp
 
 	if (stack == NULL)
-		return (0);
+		return (1);
 	current = stack;
 	while (current)
 	{
 		checker = current->next;
 		while (checker)
 		{
-			checker = checker->next;
 			if (current->value == checker->value) // valu sinion 2 pointer a NULL
 				return (1);
+			checker = checker->next;
 		}
 		current = current->next;
 	}
