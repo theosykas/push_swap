@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:29:55 by theo              #+#    #+#             */
-/*   Updated: 2025/06/10 09:58:59 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/10 10:12:17 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@
 typedef struct	s_node
 {
 	int				value; //valeur a trier
-	int *current;
-	int	*checker;
+	int				*current;
+	int				*checker;
 	struct s_node	*next; // element suivant dans la pile
 }	t_node;
 
@@ -44,12 +44,12 @@ typedef struct	s_stack
 void	check_arg(t_stack *stack, t_node *node);
 
 /*check_arg.c*/
-int	is_digit_or_sign(char c);
-int	is_valid_num(char *str);
-int	has_duplicates(t_node *stack);
+int		is_digit_or_sign(char c);
+int		is_valid_num(char *str);
+int		has_duplicates(t_node *stack);
 
 /*main*/
-int	main(int ac, char **av);
+int		main(int ac, char **av);
 
 /*swap.c*/
 void	sa(t_stack *stack);
@@ -73,7 +73,7 @@ int		free_stack(t_stack *stack);
 void	free_node(t_node *node);
 
 /*limits_int.c*/
-int	is_limit_int(char *str);
+int		is_limit_int(char *str);
 long	atol_long_int(const char *str);
 
 /*push.c*/
@@ -84,7 +84,7 @@ void	pb(t_stack *stack);
 t_node	*create_node(int value);
 void	init_stack(t_stack *stack);
 int		add_node(t_node **stack, t_node *new_element); // double ** == modifif
-void	is_sorted_a(t_node *stack);
+int		is_sorted_a(t_node *stack);
 
 #endif
 

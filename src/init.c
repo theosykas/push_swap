@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 15:12:34 by theo              #+#    #+#             */
-/*   Updated: 2025/06/10 09:58:42 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/10 10:13:16 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	init_stack(t_stack *stack)
 int	add_node(t_node **stack, t_node *new_element)
 {
 	t_node	*tmp;
-	
+
 	if (!new_element)
 		return (EXIT_FAILURE);
 	if (*stack == NULL)
@@ -57,7 +57,7 @@ int	add_node(t_node **stack, t_node *new_element)
 void	is_sorted_a(t_node *stack)
 {
 	t_node	*current;
-	
+
 	if (!stack || !stack->next)
 		return (1);
 	current = stack;

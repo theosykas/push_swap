@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 19:22:03 by theo              #+#    #+#             */
-/*   Updated: 2025/06/10 10:06:27 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/10 10:12:49 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int	is_limit_int(char *str)
 {
 	long	current;
-	
+
 	if (!str)
 		return (1);
 	current = atol_long_int(str);

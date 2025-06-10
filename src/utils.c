@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:29:51 by theo              #+#    #+#             */
-/*   Updated: 2025/06/10 10:01:55 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/10 10:13:33 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ int	has_duplicates(t_node *stack) // stack : parcours la liste
 	return (0);
 }
 
-void	is_sorted_a(t_node *stack)
+int	is_sorted_a(t_node *stack)
 {
 	t_node	*current;
-	
+
 	if (!stack || !stack->next)
 		return (1);
 	current = stack;
