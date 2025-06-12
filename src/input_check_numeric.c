@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_numeric_arg.c                                :+:      :+:    :+:   */
+/*   input_check_numeric.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 15:24:49 by theo              #+#    #+#             */
-/*   Updated: 2025/06/10 09:59:24 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/12 15:11:03 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	is_valid_num(char *str)
 		return (0);
 	if (*str == '+' || *str == '-')
 		str++;
-	if (!(*str >= '0' && *str <= '9')) // 1 chiffre apres le sign signie return (0)
+	if (!(*str >= '0' && *str <= '9')) /*One digit after the sign means return (0)*/
 		return (0);
 	while (*str)
 	{
@@ -34,10 +34,10 @@ int	is_valid_num(char *str)
 	return (1);
 }
 
-int	has_duplicates(t_node *stack) // stack : parcours la liste
+int	has_duplicates(t_node *stack) /*stack : check the list*/
 {
-	t_node	*current; // parcours chaques node
-	t_node	*checker; // parcours chaques pos de current et cmp
+	t_node	*current; /*check each node as well*/
+	t_node	*checker; /*navigate each position of current and compares*/
 
 	if (!stack)
 		return (1);
@@ -47,7 +47,7 @@ int	has_duplicates(t_node *stack) // stack : parcours la liste
 		checker = current->next;
 		while (checker)
 		{
-			if (current->value == checker->value) // valu sinion 2 pointer a NULL
+			if (current->value == checker->value)
 				return (1);
 			checker = checker->next;
 		}

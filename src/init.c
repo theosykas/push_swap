@@ -6,14 +6,16 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 15:12:34 by theo              #+#    #+#             */
-/*   Updated: 2025/06/10 10:13:16 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/12 15:19:57 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/*crée un nouveau noeud contenant une valeur a trier,  a chaques ajout d'une valeur 
-a la pile on utilise cette fonction pour le noeud correspondant*/
+
+/*Creates a new node containing a value to be sorted.
+Each time a value is added to the stack, this function is used to create the corresponding node.*/
+
 t_node	*create_node(int value)
 {
 	t_node *new = calloc(1, sizeof(t_node));
@@ -24,7 +26,7 @@ t_node	*create_node(int value)
 	return (new);
 }
 
-/*init de la taille et des piles simplement*/
+/*Initialize the size et the stack (A,B)*/
 void	init_stack(t_stack *stack)
 {
 	stack->a = NULL;
@@ -33,7 +35,8 @@ void	init_stack(t_stack *stack)
 	stack->size_b = 0;
 }
 
-/*ajouter un node a la fin d'une pile ou si elle est NULL l'ajouter au debut */
+/*Add a node at the end of a stack or if the stack is 'NULL' 
+we add at the start of the node*/
 int	add_node(t_node **stack, t_node *new_element)
 {
 	t_node	*tmp;
@@ -46,7 +49,7 @@ int	add_node(t_node **stack, t_node *new_element)
 		return (EXIT_SUCCESS);
 	}
 	tmp = *stack;
-	while (tmp->next) // tant que le pro element existe on parcours
+	while (tmp->next) /*as long as the next element exists, we check*/
 	{
 		tmp = tmp->next;
 	}
