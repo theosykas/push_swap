@@ -6,24 +6,21 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:29:55 by theo              #+#    #+#             */
-/*   Updated: 2025/06/12 15:22:32 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/12 16:27:26 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-//# define INT_MIN -2147483648
-//# define INT_MAX 2147483647
-
 # include "libft/libft.h"
-# include <limits.h> // pour int min et max 
+# include <limits.h>  /*for limits int*/ 
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 
-//pour contenir les infos globals
-typedef struct	s_node
+/*global variables*/
+typedef struct s_node
 {
 	int				value; //valeur a trier
 	int				*current;
@@ -31,8 +28,8 @@ typedef struct	s_node
 	struct s_node	*next; // element suivant dans la pile
 }	t_node;
 
-// pour gerer pile a et b
-typedef struct	s_stack
+/*for stack A & B*/
+typedef struct s_stack
 {
 	t_node	*a;
 	t_node	*b;
@@ -77,6 +74,7 @@ long	atol_long_int(const char *str);
 /*push.c*/
 void	pa(t_stack *stack);
 void	pb(t_stack *stack);
+static void	push_swap(t_stack *src, t_stack *dst);
 
 /*init.c*/
 t_node	*create_node(int value);
@@ -89,26 +87,3 @@ int		is_sorted_a(t_node *stack);
 /*atoi maybe good*/
 /*pile a et pile b*/
 /*t_swap *swap*/
-
-/*sa (swap a) : Intervertit les 2 premiers éléments au sommet de la pile a.
-Ne fait rien s’il n’y en a qu’un ou aucun.
-sb (swap b ) : Intervertit les 2 premiers éléments au sommet de la pile b.
-Ne fait rien s’il n’y en a qu’un ou aucun.
-ss : sa et sb en même temps.
-pa (push a) : Prend le premier élément au sommet de b et le met sur a.
-Ne fait rien si b est vide.
-pb (push b) : Prend le premier élément au sommet de a et le met sur b.
-Ne fait rien si a est vide.
-ra (rotate a) : Décale d’une position vers le haut tous les élements de la pile a.
-Le premier élément devient le dernier.
-rb (rotate b) : Décale d’une position vers le haut tous les élements de la pile b.
-Le premier élément devient le dernier.
-rr : ra et rb en même temps.
-rra (reverse rotate a) : Décale d’une position vers le bas tous les élements de
-la pile a. Le dernier élément devient le premier.
-rrb (reverse rotate b) : Décale d’une position vers le bas tous les élements de
-la pile b . le dernier element devient le premier.
-rrr : rra et rrb at the same time*/
-
-/*malloc, read, free exit*/
-/*trier les piles libere bien la heap aucun relink aucune var globale */

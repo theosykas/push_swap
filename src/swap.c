@@ -6,9 +6,17 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:29:47 by theo              #+#    #+#             */
-/*   Updated: 2025/06/10 10:13:58 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/12 16:20:27 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+
+void	sa(t_stack *stack);
+
+
+void	sb(t_stack *stack);
+
+
+void	ss(t_stack *stack);

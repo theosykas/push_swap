@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 15:12:40 by theo              #+#    #+#             */
-/*   Updated: 2025/06/12 15:23:28 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/12 15:28:41 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	free_stack(t_stack *stack)
 
 void	free_node(t_node *node)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	while (node)
 	{

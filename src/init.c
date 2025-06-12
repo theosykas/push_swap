@@ -6,18 +6,21 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 15:12:34 by theo              #+#    #+#             */
-/*   Updated: 2025/06/12 15:24:27 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/12 15:27:20 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
 /*Creates a new node containing a value to be sorted.
-Each time a value is added to the stack, this function is used to create the corresponding node.*/
+Each time a value is added to the stack,
+this function is used to create the corresponding node.*/
 
 t_node	*create_node(int value)
 {
-	t_node *new = calloc(1, sizeof(t_node));
+	t_node	*new;
+
+	new = calloc(1, sizeof(t_node));
 	if (!new)
 		return (NULL);
 	new->value = value;

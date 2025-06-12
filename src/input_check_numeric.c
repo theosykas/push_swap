@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 15:24:49 by theo              #+#    #+#             */
-/*   Updated: 2025/06/12 15:23:20 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/12 15:31:46 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int	input_valid_numeric(char *str)
 		return (0);
 	if (*str == '+' || *str == '-')
 		str++;
-	if (!(*str >= '0' && *str <= '9')) /*One digit after the sign means return (0)*/
+	if (!(*str >= '0' && *str <= '9'))
+	/*One digit after the sign means return (0)*/
 		return (0);
 	while (*str)
 	{
@@ -34,7 +35,8 @@ int	input_valid_numeric(char *str)
 	return (1);
 }
 
-int	has_duplicates(t_node *stack) /*stack : check the list*/
+/*stack : check the list*/
+int	has_duplicates(t_node *stack)
 {
 	t_node	*current; /*check each node as well*/
 	t_node	*checker; /*navigate each position of current and compares*/
@@ -55,4 +57,3 @@ int	has_duplicates(t_node *stack) /*stack : check the list*/
 	}
 	return (1);
 }
-
