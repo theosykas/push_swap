@@ -6,12 +6,11 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 15:12:34 by theo              #+#    #+#             */
-/*   Updated: 2025/06/12 15:19:57 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/12 15:24:27 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
 
 /*Creates a new node containing a value to be sorted.
 Each time a value is added to the stack, this function is used to create the corresponding node.*/
@@ -57,18 +56,18 @@ int	add_node(t_node **stack, t_node *new_element)
 	return (EXIT_SUCCESS);
 }
 
-void	is_sorted_a(t_node *stack)
+int	is_sorted_a(t_node *stack)
 {
 	t_node	*current;
 
 	if (!stack || !stack->next)
-		return (1);
+		return (0);
 	current = stack;
 	while (current->next)
 	{
 		if (current->value > current->next->value)
-			return (1);
+			return (0);
 		current = current->next;
 	}
-	return (0);
+	return (1);
 }

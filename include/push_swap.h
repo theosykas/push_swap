@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:29:55 by theo              #+#    #+#             */
-/*   Updated: 2025/06/10 10:12:17 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/12 15:22:32 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,10 @@ typedef struct	s_stack
 }	t_stack;
 
 /*utils.c*/
-void	check_arg(t_stack *stack, t_node *node);
 
 /*check_arg.c*/
 int		is_digit_or_sign(char c);
-int		is_valid_num(char *str);
+int		input_valid_numeric(char *str);
 int		has_duplicates(t_node *stack);
 
 /*main*/
@@ -67,7 +66,6 @@ void	rrb(t_stack *stack);
 void	rrr(t_stack *stack);
 
 /*check_error.c*/
-void	free_exit(t_stack *stack);
 void	exit_and_free(t_node *node, t_stack *stack);
 int		free_stack(t_stack *stack);
 void	free_node(t_node *node);

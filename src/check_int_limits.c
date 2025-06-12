@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 19:22:03 by theo              #+#    #+#             */
-/*   Updated: 2025/06/10 10:12:49 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/12 15:23:55 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int	is_limit_int(char *str)
 	long	current;
 
 	if (!str)
-		return (1);
+		return (0);
 	current = atol_long_int(str);
 	if (current < INT_MIN || current > INT_MAX)
-		return (1);
-	return (0);
+		return (0);
+	return (1);
 }
 
 /*long_int*/
@@ -33,7 +33,7 @@ long	atol_long_int(const char *str)
 	int	sign;
 
 	if (!str)
-		return (1);
+		return (0);
 	sign = 1;
 	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
 		str++;
