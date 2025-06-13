@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 15:12:43 by theo              #+#    #+#             */
-/*   Updated: 2025/06/12 16:50:34 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/14 00:46:13 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,28 +20,33 @@ Finally, we place this new element at the top of stack A
 */
 
 /*pa take the first element of the b stack and place this element in first position of a */
-void	pa(t_stack *stack)
+
+static	int	push_swap(t_node **stack);
+
+int	pa(t_stack *stack)
 {
 	t_node	*data;
 
 	if (!stack->b)
-		return ;
-	data = stack->b; /*we stock the first element of b stack*/
-	stack->b = stack->b->next;/* we avanced the first element and delate the first */
-	data->next = stack->a; /*on fait le liens du tmp qui contient le premiere element de b avec a*/
-	stack->a = data; /*puis on colle la premiere valeur de b*/
+		exit_and_free(NULL, stack);
+	data = stack->b;
+	stack->b = stack->b->next;
+	data->next = stack->a;
+	stack->a = data;
 	ft_putstr_fd("pa\n", 1);
+	return (EXIT_SUCCESS);
 }
 
-void	pb(t_stack *stack)
+int	pb(t_stack *stack)
 {
 	t_node	*data;
 
 	if (!stack->a);
-		return ;
+		exit_and_free(NULL, stack);
 	data = stack->a;
 	stack->a = stack->a->next;
 	data->next = stack->b;
 	stack->b = data;
 	ft_putstr_fd("pb\n",1);
+	return (EXIT_SUCCESS);
 }

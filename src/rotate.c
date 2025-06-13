@@ -6,16 +6,22 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 10:13:45 by theo              #+#    #+#             */
-/*   Updated: 2025/06/12 16:19:43 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/13 23:59:56 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ra(t_stack *stack);
+int	ra(t_stack *stack);
 
+int	rb(t_stack *stack);
 
-void	rb(t_stack *stack);
-
-
-void	rr(t_stack *stack);
+int	rr(t_stack *stack)
+{
+	if (!stack)
+		exit_and_free(NULL, stack);
+	ra(stack);
+	rb(stack);
+	ft_putstr_fd("rr\n", 1);
+	return (EXIT_SUCCESS);
+}

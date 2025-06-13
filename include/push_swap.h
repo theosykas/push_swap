@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:29:55 by theo              #+#    #+#             */
-/*   Updated: 2025/06/12 16:27:26 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/14 00:13:23 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_stack
 	t_node	*b;
 	int		size_a;
 	int		size_b;
+	void	*next;
 }	t_stack;
 
 /*utils.c*/
@@ -48,19 +49,20 @@ int		has_duplicates(t_node *stack);
 int		main(int ac, char **av);
 
 /*swap.c*/
-void	sa(t_stack *stack);
-void	sb(t_stack *stack);
-void	ss(t_stack *stack);
+int	sa(t_stack *stack);
+int	sb(t_stack *stack);
+int	ss(t_stack *stack);
+static	void	swap_stack(t_stack *stack);
 
 /*rotate.c*/
-void	ra(t_stack *stack);
-void	rb(t_stack *stack);
-void	rr(t_stack *stack);
+int	ra(t_stack *stack);
+int	rb(t_stack *stack);
+int	rr(t_stack *stack);
 
 /*rev_rotate.c*/
-void	rra(t_stack *stack);
-void	rrb(t_stack *stack);
-void	rrr(t_stack *stack);
+int	rra(t_stack *stack);
+int	rrb(t_stack *stack);
+int	rrr(t_stack *stack);
 
 /*check_error.c*/
 void	exit_and_free(t_node *node, t_stack *stack);
@@ -72,8 +74,8 @@ int		is_limit_int(char *str);
 long	atol_long_int(const char *str);
 
 /*push.c*/
-void	pa(t_stack *stack);
-void	pb(t_stack *stack);
+int	pa(t_stack *stack);
+int	pb(t_stack *stack);
 static void	push_swap(t_stack *src, t_stack *dst);
 
 /*init.c*/
