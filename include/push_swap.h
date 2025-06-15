@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:29:55 by theo              #+#    #+#             */
-/*   Updated: 2025/06/14 00:13:23 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/15 16:40:53 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ long	atol_long_int(const char *str);
 /*push.c*/
 int	pa(t_stack *stack);
 int	pb(t_stack *stack);
-static void	push_swap(t_stack *src, t_stack *dst);
+static	int	push_swap(t_node **stack);
 
 /*init.c*/
 t_node	*create_node(int value);
