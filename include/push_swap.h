@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 18:29:55 by theo              #+#    #+#             */
-/*   Updated: 2025/06/16 20:23:15 by theo             ###   ########.fr       */
+/*   Updated: 2025/06/16 20:33:34 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,26 +41,30 @@ typedef struct s_stack
 /*--------operations--------------*/
 
 /*swap.c*/
-void	sa(t_stack *stack);
-void	sb(t_stack *stack);
-void	ss(t_stack *stack);
-static	void	swap_stack(t_stack *stack);
+
+void		sa(t_stack *stack);
+void		sb(t_stack *stack);
+void		ss(t_stack *stack);
+/*static	int	swap_stack(t_stack *stack);*/
 
 /*rotate.c*/
+
 void	ra(t_stack *stack);
 void	rb(t_stack *stack);
 void	rr(t_stack *stack);
 
 /*rev_rotate.c*/
-static int	rev_rotate(t_node **stack);
-void	rra(t_stack *stack);
-void	rrb(t_stack *stack);
-void	rrr(t_stack *stack);
+
+/*static int	rev_rotate(t_node **stack);*/
+void		rra(t_stack *stack);
+void		rrb(t_stack *stack);
+void		rrr(t_stack *stack);
 
 /*push.c*/
-static	int	push_swap(t_node **stack);
-int	pa(t_stack *stack);
-int	pb(t_stack *stack);
+
+/*static	int	push_swap(t_node **stack);*/
+int		pa(t_stack *stack);
+int		pb(t_stack *stack);
 
 /*-----------------------------------*/
 
