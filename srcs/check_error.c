@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 17:42:18 by theo              #+#    #+#             */
-/*   Updated: 2025/09/27 17:42:43 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/05 23:38:39 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,3 +56,12 @@ int	has_duplicated(int ac, char **av)
 	}
 	return (true);
 }
+
+/* void	exit_and_free(t_stack *stack, t_node *node)
+{
+	if (!node)
+		free(node);
+	if (!stack)
+		free(stack);
+}
+ */

@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:52:19 by theo              #+#    #+#             */
-/*   Updated: 2025/09/28 22:12:21 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/05 23:29:20 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_node
 {
 	int	value;
 	int	current;
+	int	prev;
 	struct s_node *next;
 }	t_node;
 
@@ -43,7 +44,7 @@ typedef struct s_node
 typedef struct s_stack
 {
 	t_node	*a;
-	t_node	*b;
+	t_node *b;
 }	t_stack;
 
 int	main(int ac, char **av);
@@ -54,8 +55,8 @@ int	radix_sort(char *tab, int nb, int exp);
 int	get_max(int tab[], int nbytes);
 
 /*init.c*/
-void	init_stack(t_stack *stack, t_node *next);
-t_node	*new_node(int value);
+t_stack *init_stack(void);
+t_node	*new_node(int value, int prev, int current);
 
 /*utils.c*/
 long	ft_atol(char *s);
