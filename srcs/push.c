@@ -1,37 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/27 17:42:46 by theo              #+#    #+#             */
-/*   Updated: 2025/10/06 00:42:11 by theo             ###   ########.fr       */
+/*   Created: 2025/10/05 23:45:27 by theo              #+#    #+#             */
+/*   Updated: 2025/10/05 23:52:49 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-t_node	*new_node(int value)
-{
-	t_node	*new_node;
-
-	new_node = ft_calloc(1, sizeof(t_node));
-	if (!new_node)
-		return (NULL);
-	new_node->value = value;
-	new_node->next = NULL;
-	return (new_node);
-}
-
-t_stack *stack_init(void)
-{
-	t_stack *stack_init;
-
-	stack_init = ft_calloc(1, sizeof(t_stack));
-	if (!stack_init)
-		return (NULL);
-	stack_init->a = NULL;
-	stack_init->b = NULL;
-	return (stack_init);
-}

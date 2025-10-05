@@ -1,37 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/27 17:42:46 by theo              #+#    #+#             */
-/*   Updated: 2025/10/06 00:42:11 by theo             ###   ########.fr       */
+/*   Created: 2025/10/05 23:45:33 by theo              #+#    #+#             */
+/*   Updated: 2025/10/06 00:29:55 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-t_node	*new_node(int value)
+int	swap(t_node *head)
 {
-	t_node	*new_node;
+	int	tmp;
 
-	new_node = ft_calloc(1, sizeof(t_node));
-	if (!new_node)
-		return (NULL);
-	new_node->value = value;
-	new_node->next = NULL;
-	return (new_node);
+	if (!head || !head->next)
+		return (false);
+	tmp = head->value;
+	head->value = head->next->value;
+	head->next->value = tmp;
+	return (true);
 }
 
-t_stack *stack_init(void)
+void	swap_a(t_stack *stack)
 {
-	t_stack *stack_init;
+	swap(stack->a);
+	ft_putstr_fd("sa\n", 1);
+}
 
-	stack_init = ft_calloc(1, sizeof(t_stack));
-	if (!stack_init)
-		return (NULL);
-	stack_init->a = NULL;
-	stack_init->b = NULL;
-	return (stack_init);
+void	swap_b(t_stack *stack)
+{
+	swap(stack->b);
+	ft_putstr_fd("sb\n", 1);
+}
+
+void	swap_ss(t_stack *stack)
+{
+	swap(stack->a);
+	swap(stack->b);
+	ft_putstr_fd("ss\n", 1);
 }
