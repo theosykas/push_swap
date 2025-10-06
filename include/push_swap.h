@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:52:19 by theo              #+#    #+#             */
-/*   Updated: 2025/10/06 16:45:15 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/06 20:10:08 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ garde en memoire l'adresse du prochaine element (struct s_node *next) en pointan
 typedef struct s_node
 {
 	int	value;
+	struct s_node *prev;
 	struct s_node *next;
 }	t_node;
 
@@ -55,11 +56,15 @@ int		get_max(int tab[], int nbytes);
 /*init.c*/
 t_node	*new_node(int value);
 t_stack *stack_init(void);
+void	ft_add_back(t_node **node, t_node *new_n);
+t_node	*ft_lstlast(t_node *lst);
 
 /*utils.c*/
 long	ft_atol(char *s);
 int		has_duplicated(int ac, char **av);
 int		is_sorted_a(t_stack *stack);
+
+/*--------OPERATIONS---------*/
 
 /*swap.c*/
 int		swap(t_node *head);
@@ -67,11 +72,17 @@ void	swap_a(t_stack *stack);
 void	swap_b(t_stack *stack);
 void	swap_ss(t_stack *stack);
 
-//push
+/*push*/
 int		push(t_node **dst, t_node **src);
 void	push_a(t_stack *stack);
 void	push_b(t_stack *stack);
 void	push_pp(t_stack *stack);
+
+/*rotate*/
+int		rotate(t_node **head);
+void	ra(t_stack *stack);
+void	rb(t_stack *stack);
+void	rr(t_stack *stack);
 
 #endif
 

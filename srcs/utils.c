@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 17:17:28 by theo              #+#    #+#             */
-/*   Updated: 2025/10/05 23:30:18 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/06 20:09:15 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		is_sorted_a(t_stack *stack)
 	}
 	return (true);
 }
+
 /* int	get_max(int tab[], int nbytes)
 {
 	int	i;

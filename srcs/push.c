@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 23:45:27 by theo              #+#    #+#             */
-/*   Updated: 2025/10/06 16:45:39 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/06 19:30:27 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,7 @@ void	push_b(t_stack *stack)
 	ft_putstr_fd("pb\n", 1);
 }
 
-void	push_pp(t_stack *stack)
-{
-	push(&stack->a, &stack->b);
-	push(&stack->b, &stack->a);
-	ft_putstr_fd("pp\n", 1);
-}
+//push_back : 
 
 /* int push_a(t_stack *stack)
 {
