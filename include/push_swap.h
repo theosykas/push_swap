@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:52:19 by theo              #+#    #+#             */
-/*   Updated: 2025/10/06 16:17:29 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/06 16:45:15 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ typedef struct s_stack
 	t_node *b;
 }	t_stack;
 
-int	main(int ac, char **av);
-int	check_args(int ac, char **av);
+int		main(int ac, char **av);
+int		check_args(int ac, char **av);
 
 /*radix_algo.c*/
-int	radix_sort(char *tab, int nb, int exp);
-int	get_max(int tab[], int nbytes);
+int		radix_sort(char *tab, int nb, int exp);
+int		get_max(int tab[], int nbytes);
 
 /*init.c*/
 t_node	*new_node(int value);
@@ -62,7 +62,7 @@ int		has_duplicated(int ac, char **av);
 int		is_sorted_a(t_stack *stack);
 
 /*swap.c*/
-int	swap(t_node *head);
+int		swap(t_node *head);
 void	swap_a(t_stack *stack);
 void	swap_b(t_stack *stack);
 void	swap_ss(t_stack *stack);
@@ -70,6 +70,8 @@ void	swap_ss(t_stack *stack);
 //push
 int		push(t_node **dst, t_node **src);
 void	push_a(t_stack *stack);
+void	push_b(t_stack *stack);
+void	push_pp(t_stack *stack);
 
 #endif
 

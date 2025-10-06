@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:53:24 by theo              #+#    #+#             */
-/*   Updated: 2025/10/06 00:55:29 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/06 16:45:29 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,10 @@ int	main(int ac, char **av)
 	//stack->b->next = new_node(1);
 	swap(stack->b);
 	swap_b(stack);
+	/*push*/
+	stack->a = new_node(1);
+	stack->b = new_node(3);
+//	printf("pa : %d\n", push_a(stack));
 	return(0);
 }
 
