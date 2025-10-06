@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:52:19 by theo              #+#    #+#             */
-/*   Updated: 2025/10/06 00:43:31 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/06 16:17:29 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ garde en memoire l'adresse du prochaine element (struct s_node *next) en pointan
 typedef struct s_node
 {
 	int	value;
-	int	current;
-	int	prev;
 	struct s_node *next;
 }	t_node;
 
@@ -68,6 +66,10 @@ int	swap(t_node *head);
 void	swap_a(t_stack *stack);
 void	swap_b(t_stack *stack);
 void	swap_ss(t_stack *stack);
+
+//push
+int		push(t_node **dst, t_node **src);
+void	push_a(t_stack *stack);
 
 #endif
 

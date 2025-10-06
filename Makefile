@@ -24,3 +24,5 @@ fclean: clean
 	$(MAKE) -C include/libft fclean
 
 re: fclean all
+
+.PHONY : clean fclean all re
