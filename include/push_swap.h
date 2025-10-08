@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:52:19 by theo              #+#    #+#             */
-/*   Updated: 2025/10/06 20:10:08 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/08 19:56:10 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,7 @@ typedef struct s_stack
 int		main(int ac, char **av);
 int		check_args(int ac, char **av);
 
-/*radix_algo.c*/
-int		radix_sort(char *tab, int nb, int exp);
-int		get_max(int tab[], int nbytes);
+/*algo.c*/
 
 /*init.c*/
 t_node	*new_node(int value);
@@ -83,6 +81,13 @@ int		rotate(t_node **head);
 void	ra(t_stack *stack);
 void	rb(t_stack *stack);
 void	rr(t_stack *stack);
+
+
+/*rev_totate*/
+int	rev_rotate(t_node **lst);
+void	rev_rotate_a(t_stack *stack);
+void	rev_rotate_b(t_stack *stack);
+void	rev_rotate_ab(t_stack *stack);
 
 #endif
 
