@@ -6,34 +6,11 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 23:45:29 by theo              #+#    #+#             */
-/*   Updated: 2025/10/08 19:55:30 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/11 22:08:25 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-/* rra (reverse rotate a): Shift down all elements of stack a by 1.
-		The last element becomes the first one.
-	rrb (reverse rotate b): Shift down all elements of stack b by 1.
-		The last element becomes the first one.
-	rrr : rra and rrb at the same time. */
-
-/* int	rev_rotate(t_node **head)
-{
-	t_node	*last;
-
-	if (!*head || !(*head)->next)
-		return (false);
-	last = *head;
-	while (last->next)
-		last = last->next; //lst
-	last->prev->next = NULL;  //head -> 1 <-> 2 <-> 3 <-> 4	5 (4->next = NULL)
-	last->prev = NULL; //premier donc pas de prev devant lui
-	last->next = *head; // -> 1 
-	(*head)->prev = last;
-	*head = last; // plus 1 mais 5
-	return (true);
-} */
 
 int	rev_rotate(t_node **head)
 {

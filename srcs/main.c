@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:53:24 by theo              #+#    #+#             */
-/*   Updated: 2025/10/11 22:05:34 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/11 22:07:17 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int	check_args(int ac, char **av)
 	int	i;
 
 	(void)ac;
-	i = 1; // -> av[1]
+	i = 1;
 	if (!ft_atol(av[i]))
 		return (false);
-	if (!has_duplicated(ac, av)) // all_array
+	if (!has_duplicated(ac, av))
 		return (false);
 	return (1);
 }
