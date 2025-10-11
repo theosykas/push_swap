@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:52:19 by theo              #+#    #+#             */
-/*   Updated: 2025/10/08 19:56:10 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/11 22:00:55 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 /*
 struct_s_node
@@ -33,7 +34,7 @@ garde en memoire l'adresse du prochaine element (struct s_node *next) en pointan
 
 typedef struct s_node
 {
-	int	value;
+	long	value;
 	struct s_node *prev;
 	struct s_node *next;
 }	t_node;
@@ -46,6 +47,8 @@ typedef struct s_stack
 	t_node *b;
 }	t_stack;
 
+
+/*main.c*/
 int		main(int ac, char **av);
 int		check_args(int ac, char **av);
 
@@ -62,29 +65,29 @@ long	ft_atol(char *s);
 int		has_duplicated(int ac, char **av);
 int		is_sorted_a(t_stack *stack);
 
-/*--------OPERATIONS---------*/
+/*-------------------------------------------OPERATIONS------------------------------------------------------*/
 
-/*swap.c*/
+//swap.c
 int		swap(t_node *head);
 void	swap_a(t_stack *stack);
 void	swap_b(t_stack *stack);
 void	swap_ss(t_stack *stack);
 
-/*push*/
+//push
 int		push(t_node **dst, t_node **src);
 void	push_a(t_stack *stack);
 void	push_b(t_stack *stack);
 void	push_pp(t_stack *stack);
 
-/*rotate*/
+//rotate
 int		rotate(t_node **head);
 void	ra(t_stack *stack);
 void	rb(t_stack *stack);
 void	rr(t_stack *stack);
 
 
-/*rev_totate*/
-int	rev_rotate(t_node **lst);
+//rev_totate
+int		rev_rotate(t_node **lst);
 void	rev_rotate_a(t_stack *stack);
 void	rev_rotate_b(t_stack *stack);
 void	rev_rotate_ab(t_stack *stack);

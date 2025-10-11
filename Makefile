@@ -4,8 +4,9 @@ CFLAGS = -Wall -Wextra -Werror -I./include
 NAME = push_swap
 LIBFT = include/libft/libft.a
 
-SRC = srcs/main.c srcs/utils.c srcs/check_error.c srcs/init.c srcs/swap.c srcs/push.c
-OBJ = $(SRC:.c=.o)
+SRCS = srcs/main.c srcs/utils.c srcs/check_error.c srcs/init.c srcs/swap.c srcs/push.c srcs/turk_algo.c \
+
+OBJ = $(SRCS:.c=.o)
 
 all: $(NAME)
 

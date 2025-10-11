@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 17:42:46 by theo              #+#    #+#             */
-/*   Updated: 2025/10/06 20:09:21 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/11 21:44:15 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ t_stack *stack_init(void)
 	stack_init->b = NULL;
 	return (stack_init);
 }
-
 
 //head = start : new_node nouvau maillon 
 void	ft_add_back(t_node **head, t_node *new_n)

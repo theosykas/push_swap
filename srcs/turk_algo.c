@@ -1,29 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   turk_algo.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/25 17:17:28 by theo              #+#    #+#             */
-/*   Updated: 2025/10/08 19:59:33 by theo             ###   ########.fr       */
+/*   Created: 2025/10/11 19:25:16 by theo              #+#    #+#             */
+/*   Updated: 2025/10/11 19:25:27 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int		is_sorted_a(t_stack *stack)
-{
-	t_node	*current;
-
-	current = stack->a;
-	if (!current)
-		return (true);
-	while (current->next)
-	{
-		if (current->value > current->next->value)
-			return (false);
-		current = current->next; // ++ 
-	}
-	return (true);
-}
