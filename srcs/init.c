@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 17:42:46 by theo              #+#    #+#             */
-/*   Updated: 2025/10/11 21:44:15 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/15 12:23:32 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,28 +37,29 @@ t_stack *stack_init(void)
 	return (stack_init);
 }
 
-//head = start : new_node nouvau maillon 
-void	ft_add_back(t_node **head, t_node *new_n)
+t_content	*content_init(int pos)
 {
-	t_node *lst;
+	t_content *content;
 
-	if (!head || !new_n)
-		return ;
-	if (*head == NULL)
-	{
-		*head = new_n;
-		return ;
-	}
-	lst = ft_lstlast(*head);
-	new_n->prev = lst;
-	lst->next = new_n;
-}
-
-t_node	*ft_lstlast(t_node *lst)
-{
-	if (!lst)
+	content = ft_calloc(sizeof(t_content), 1);
+	if (!content)
 		return (NULL);
-	while(lst->next)
-		lst = lst->next;
-	return (lst);
+	content->pos = pos;
+	content->n_ra = 0;
+	content->n_rb = 0;
+	content->n_rr = 0;
+	content->n_rra = 0;
+	content->n_rrb = 0;
+	content->n_rrr = 0;
+	content->total_cost = 0;
+	return (content);
 }
+
+//content struct
+/* int	n_rr;
+	int	n_ra;
+	int	n_rb;
+	int	n_rrr;
+	int	n_rra;
+	int	n_rrb;
+	int	total_cost; */

@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:52:19 by theo              #+#    #+#             */
-/*   Updated: 2025/10/11 22:00:55 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/15 15:16:45 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,9 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-/*
-struct_s_node
-link les node si node 1 = 3 je pointe donc sur le prochain 7 jusqu'a null
-garde en memoire l'adresse du prochaine element (struct s_node *next) en pointant sur la prochaine
-*/
-
-/*
-	{3 , 7, 8, 9}
-	value 3 -> next ==  value 7 -> next == value 9 -> next == NULL
-*/
-
 typedef struct s_node
 {
-	long	value;
+	int	value;
 	struct s_node *prev;
 	struct s_node *next;
 }	t_node;
@@ -47,25 +36,84 @@ typedef struct s_stack
 	t_node *b;
 }	t_stack;
 
+//0 scenarios conflit
+typedef struct s_content
+{
+	int	pos;
+	int	n_rr;
+	int	n_ra;
+	int	n_rb;
+	int	n_rrr;
+	int	n_rra;
+	int	n_rrb;
+	int	total_cost;
+}	t_content;
 
-/*main.c*/
+typedef struct s_rotate
+{
+	int	n_rr;
+	int	n_ra;
+	int	n_rb;
+	int	total_rotate;
+}	t_rotate;
+
+typedef struct s_rev_rotate
+{
+	int	n_rrr;
+	int	n_rra;
+	int	n_rrb;
+	int	total_rev_rotate;
+}	t_rev_rotate;
+
+
+	/*main.c*/
 int		main(int ac, char **av);
 int		check_args(int ac, char **av);
+void	free_stack(t_stack *stack);
 
 /*algo.c*/
 
-/*init.c*/
-t_node	*new_node(int value);
-t_stack *stack_init(void);
+	/*get_value.c*/
+int	get_stack_pos(t_node *head,t_content *content, int value);
+t_node	*get_min(t_node *head);
+t_node	*get_max(t_node *head);
+
+	/*utils.c*/
+int		is_sorted_a(t_stack *stack);
 void	ft_add_back(t_node **node, t_node *new_n);
 t_node	*ft_lstlast(t_node *lst);
 
-/*utils.c*/
+/*----------------PARSING_INPUT------------------*/
+
+	/*check_arg*/
 long	ft_atol(char *s);
 int		has_duplicated(int ac, char **av);
+	/*utils.c*/
 int		is_sorted_a(t_stack *stack);
+void	ft_add_back(t_node **node, t_node *new_n);
+t_node	*ft_lstlast(t_node *lst);
 
-/*-------------------------------------------OPERATIONS------------------------------------------------------*/
+
+/*-----------------------------CALCULATE---------------------------------*/
+	/*cost_init*/
+void	rotate_content(t_content *content, t_rotate *res, int pos);
+void	rev_rotate_content(t_content *content, t_rev_rotate *res, int pos);
+
+	/*move.c*/
+int	move_up(t_stack *stack, int current);
+int	move_down(t_stack *stack, int current);
+
+
+/*-----NODE_AND_STACK---------*/
+
+	/*node_utils.c*/
+t_node	*gnode_index(t_stack *stack, int value);
+	/*init.c*/
+t_node	*new_node(int value);
+t_stack *stack_init(void);
+t_content	*content_init(int pos);
+
+/*---------OPERATIONS-------------------*/
 
 //swap.c
 int		swap(t_node *head);
@@ -95,35 +143,13 @@ void	rev_rotate_ab(t_stack *stack);
 #endif
 
 
-//is_sorted() verifie si la pile est belle est bien trier 
+/*
+struct_s_node
+link les node si node 1 = 3 je pointe donc sur le prochain 7 jusqu'a null
+garde en memoire l'adresse du prochaine element (struct s_node *next) en pointant sur la prochaine
+*/
 
 /*
-	2 stacks a, b 
-
-	start = a : int positif, neg 
-	b = empty
-	
-	"<" -> ">"
-
-	op : 
-
-	sa (swap a): Swap the first 2 elements at the top of stack a.
-		Do nothing if there is only one element or none.
-	sb (swap b): Swap the first 2 elements at the top of stack b.
-		Do nothing if there is only one element or none.
-	ss : sa and sb at the same time.
-	pa (push a): Take the first element at the top of b and put it at the top of a.
-		Do nothing if b is empty.
-	pb (push b): Take the first element at the top of a and put it at the top of b.
-		Do nothing if a is empty.
-	ra (rotate a): Shift up all elements of stack a by 1.
-		The first element becomes the last one.
-	rb (rotate b): Shift up all elements of stack b by 1.
-		The first element becomes the last one.
-	rr : ra and rb at the same time.
-	rra (reverse rotate a): Shift down all elements of stack a by 1.
-		The last element becomes the first one.
-	rrb (reverse rotate b): Shift down all elements of stack b by 1.
-		The last element becomes the first one.
-	rrr : rra and rrb at the same time.
+	{3 , 7, 8, 9}
+	value 3 -> next ==  value 7 -> next == value 9 -> next == NULL
 */
