@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:53:24 by theo              #+#    #+#             */
-/*   Updated: 2025/10/15 18:07:08 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/15 20:15:53 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,14 @@ int	main(int ac, char **av)
 {
 	t_stack *stack;
 	t_node	*n_node;
+	t_content *content;
 	long	value;
 	int		i;
 
 	if (ac < 2)
 		return (1);
 	stack = stack_init();
+	content = content_init(0, 0, 0);
 	if (!check_args(ac, av) || !stack)
 	{
 		free_stack(stack);
@@ -76,10 +78,11 @@ int	main(int ac, char **av)
 		value = ft_atol(av[i]);
 		n_node = new_node(value);
 		ft_add_back(&(stack->a), n_node);
-		get_min(stack->a);
 		i++;
 	}
-	/* printf("min %d\n",get_min(stack->a)->value);
-	printf("max %d\n", get_max(stack->a)->value); */
+	move_to_stack(content, stack);
 	return(0);
 }
+
+/* printf("min %d\n",get_min(stack->a)->value);
+	printf("max %d\n", get_max(stack->a)->value); */

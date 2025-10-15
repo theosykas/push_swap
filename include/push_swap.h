@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:52:19 by theo              #+#    #+#             */
-/*   Updated: 2025/10/15 18:54:23 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/15 19:47:37 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ void	free_stack(t_stack *stack);
 
 /*algo.c*/
 t_node	*move_to_stack(t_content *content, t_stack *stack);
+void	sort_content(t_content *content, t_stack *stack);
 
 /*calculate_cost*/
 int	calculate_cost(t_content *content);
