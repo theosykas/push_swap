@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:52:19 by theo              #+#    #+#             */
-/*   Updated: 2025/10/15 15:16:45 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/15 16:46:06 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,11 @@ int		check_args(int ac, char **av);
 void	free_stack(t_stack *stack);
 
 /*algo.c*/
+
+
+/*content_rev*/
+void	content_rev_rotate(t_content *content,t_stack *stack);
+void	content_rotate(t_content *content,t_stack *stack);
 
 	/*get_value.c*/
 int	get_stack_pos(t_node *head,t_content *content, int value);
