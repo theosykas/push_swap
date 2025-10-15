@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 13:02:35 by theo              #+#    #+#             */
-/*   Updated: 2025/10/15 17:01:13 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/15 18:03:53 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int	move_down(t_stack *stack, int current)
 	}
 	return (i);
 }
+
+
 
 //all t_content
 //find_solve

@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 17:42:46 by theo              #+#    #+#             */
-/*   Updated: 2025/10/15 12:23:32 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/15 17:43:50 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_stack *stack_init(void)
 	return (stack_init);
 }
 
-t_content	*content_init(int pos)
+t_content	*content_init(int pos, int top, int bottom)
 {
 	t_content *content;
 
@@ -45,6 +45,8 @@ t_content	*content_init(int pos)
 	if (!content)
 		return (NULL);
 	content->pos = pos;
+	content->top = top;
+	content->bottom = bottom;
 	content->n_ra = 0;
 	content->n_rb = 0;
 	content->n_rr = 0;

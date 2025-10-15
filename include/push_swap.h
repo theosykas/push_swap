@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:52:19 by theo              #+#    #+#             */
-/*   Updated: 2025/10/15 16:46:06 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/15 18:54:23 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct s_stack
 //0 scenarios conflit
 typedef struct s_content
 {
+	int	top;
+	int	bottom;
 	int	pos;
 	int	n_rr;
 	int	n_ra;
@@ -72,7 +74,13 @@ int		check_args(int ac, char **av);
 void	free_stack(t_stack *stack);
 
 /*algo.c*/
+t_node	*move_to_stack(t_content *content, t_stack *stack);
 
+/*calculate_cost*/
+int	calculate_cost(t_content *content);
+
+//fill
+void	fill_content(t_content *content,t_stack *stack,  int value);
 
 /*content_rev*/
 void	content_rev_rotate(t_content *content,t_stack *stack);
@@ -108,7 +116,6 @@ void	rev_rotate_content(t_content *content, t_rev_rotate *res, int pos);
 int	move_up(t_stack *stack, int current);
 int	move_down(t_stack *stack, int current);
 
-
 /*-----NODE_AND_STACK---------*/
 
 	/*node_utils.c*/
@@ -116,7 +123,7 @@ t_node	*gnode_index(t_stack *stack, int value);
 	/*init.c*/
 t_node	*new_node(int value);
 t_stack *stack_init(void);
-t_content	*content_init(int pos);
+t_content	*content_init(int pos, int top, int bottom);
 
 /*---------OPERATIONS-------------------*/
 

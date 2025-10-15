@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:53:24 by theo              #+#    #+#             */
-/*   Updated: 2025/10/15 15:18:59 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/15 18:07:08 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	main(int ac, char **av)
 		get_min(stack->a);
 		i++;
 	}
-	printf("min %d\n",get_min(stack->a)->value);
-	printf("max %d", get_max(stack->a)->value);
+	/* printf("min %d\n",get_min(stack->a)->value);
+	printf("max %d\n", get_max(stack->a)->value); */
 	return(0);
 }
