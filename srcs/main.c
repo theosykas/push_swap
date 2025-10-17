@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:53:24 by theo              #+#    #+#             */
-/*   Updated: 2025/10/15 20:15:53 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/17 10:48:35 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ int	main(int ac, char **av)
 		ft_add_back(&(stack->a), n_node);
 		i++;
 	}
-	move_to_stack(content, stack);
 	return(0);
 }
 

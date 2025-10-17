@@ -6,11 +6,28 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 12:26:18 by theo              #+#    #+#             */
-/*   Updated: 2025/10/15 15:21:31 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/17 11:44:59 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+int	stack_size(t_stack *stack)
+{
+	t_node *current;
+	int stack_size;
+
+	if (!stack || !stack->a)
+		return (false);
+	stack_size = 0;
+	current = stack->a;
+	while (current)
+	{
+		stack_size++;
+		current = current->next;
+	}
+	return (stack_size);
+}
 
 t_node	*get_max(t_node *head)
 {

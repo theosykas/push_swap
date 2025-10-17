@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:52:19 by theo              #+#    #+#             */
-/*   Updated: 2025/10/15 19:47:37 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/17 11:53:41 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,10 @@ void	free_stack(t_stack *stack);
 
 /*algo.c*/
 t_node	*move_to_stack(t_content *content, t_stack *stack);
+void	exec_move(t_content *content,t_stack *stack, t_node *g_node);
+void	move_gnode_to_top(t_content *content, t_stack *stack, t_node *g_node);
+t_node	*find_gnode(t_content *content, t_stack *stack);
+
 void	sort_content(t_content *content, t_stack *stack);
 
 /*calculate_cost*/
@@ -91,6 +95,7 @@ void	content_rotate(t_content *content,t_stack *stack);
 int	get_stack_pos(t_node *head,t_content *content, int value);
 t_node	*get_min(t_node *head);
 t_node	*get_max(t_node *head);
+int	stack_size(t_stack *stack);
 
 	/*utils.c*/
 int		is_sorted_a(t_stack *stack);
