@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:52:19 by theo              #+#    #+#             */
-/*   Updated: 2025/10/20 12:47:57 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 14:28:39 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ void	sort_content(t_content *content, t_stack *stack);
 
 /*calculate_cost*/
 int	calculate_cost(t_content *content);
+void	rotate_cost(t_rotate *rotate);
+void	rev_rotate_cost(t_rev_rotate *rev_rotate);
 
 //fill
 void	fill_content(t_content *content,t_stack *stack,  int value);

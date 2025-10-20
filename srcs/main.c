@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:53:24 by theo              #+#    #+#             */
-/*   Updated: 2025/10/20 12:53:33 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 13:46:36 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,23 @@ void	free_stack(t_stack *stack)
 	return ;
 }
 
+void	algo_exec(t_content *content, t_stack *stack)
+{
+	t_node *gnode;
+
+	while (stack->a)
+	{
+		gnode = find_gnode(content, stack);
+		move_gnode_to_top(content, stack, gnode);
+		exec_move(content, stack, gnode);
+	}
+}
+
 int	main(int ac, char **av)
 {
 	t_stack *stack;
 	t_node	*n_node;
-	t_node	*gnode;
+	//t_node	*gnode;
 	long	value;
 	t_content *content;
 	int		i;
@@ -81,12 +93,7 @@ int	main(int ac, char **av)
 		ft_add_back(&(stack->a), n_node);
 		i++;
 	}
-	while (stack->a)
-	{
-		gnode = find_gnode(content, stack);
-		move_gnode_to_top(content, stack, gnode);
-		exec_move(content, stack, gnode);
-	}
+	algo_exec(content, stack);
 	return(0);
 }
 

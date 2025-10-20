@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:33:56 by theo              #+#    #+#             */
-/*   Updated: 2025/10/15 18:23:27 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 14:37:26 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,62 @@ void	fill_content(t_content *content,t_stack *stack,  int value)
 {
 	if (!content || !stack || !stack->a)
 		return ;
+	content->pos = get_stack_pos(stack->a, content, value); // position dans A
 	content->pos = get_stack_pos(stack->a,content, value); //pos in a stack
 	content->top = move_up(stack, value); // cost to up
 	content->bottom = move_down(stack, value);
+}
+
+void	rotate_cost(t_rotate *rotate)
+{
+	if (rotate->n_ra == 0 || rotate->n_rb == 0) // no combinaison rotation  
+	{
+		rotate->n_rr = 0;
+		return ;
+	}
+	else if (rotate->n_ra < rotate->n_rb) // stack require fewer rotate than stack b
+	{
+		rotate->n_rr = rotate->n_ra; // ra + rr silmul rotate
+		rotate->n_ra = 0; // stack->a : is done
+		rotate->n_rb = rotate->n_rb - rotate->n_rr; // last rotatate
+	}
+	else if (rotate->n_ra > rotate->n_rb)
+	{
+		rotate->n_rr = rotate->n_rb;
+		rotate->n_rb = 0;
+		rotate->n_ra = rotate->n_ra - rotate->n_rr;
+	}
+	else
+	{
+		rotate->n_rr = rotate->n_ra; // all rotate simul
+		rotate->n_ra = 0;
+		rotate->n_rb = 0;
+	}
+}
+
+void	rev_rotate_cost(t_rev_rotate *rev_rotate)
+{
+	if (rev_rotate->n_rra == 0 || rev_rotate->n_rrb == 0)
+	{
+		rev_rotate->n_rrr = 0;
+		return ;
+	}
+	else if (rev_rotate->n_rra < rev_rotate->n_rrb)
+	{
+		rev_rotate->n_rrr = rev_rotate->n_rra;
+		rev_rotate->n_rra = 0;
+		rev_rotate->n_rrb = rev_rotate->n_rrb - rev_rotate->n_rrr;
+	}
+	else if (rev_rotate->n_rra > rev_rotate->n_rrb)
+	{
+		rev_rotate->n_rrr = rev_rotate->n_rrb;
+		rev_rotate->n_rrb = 0;
+		rev_rotate->n_rra = rev_rotate->n_rra - rev_rotate->n_rrr;
+	}
+	else
+	{
+		rev_rotate->n_rrr = rev_rotate->n_rra;
+		rev_rotate->n_rra = 0;
+		rev_rotate->n_rrb = 0;
+	}
 }
