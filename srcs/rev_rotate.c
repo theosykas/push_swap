@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 23:45:29 by theo              #+#    #+#             */
-/*   Updated: 2025/10/20 18:33:30 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 20:13:33 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	rev_rotate(t_node **head)
 	lst = *head;
 	while (lst->next)
 		lst = lst->next;
-	lst->prev->next = NULL;
-	lst->prev = NULL;
-	lst->next = *head;
+	lst->prev->next = NULL; //discon
+	lst->next = *head; // lst = top
+	lst->prev = NULL; //av ls NULL
 	(*head)->prev = lst;
 	*head = lst;
 	return (true);
