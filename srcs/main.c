@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:53:24 by theo              #+#    #+#             */
-/*   Updated: 2025/10/20 17:55:32 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 18:42:37 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,22 +61,12 @@ void	algo_exec(t_content *content, t_stack *stack)
 	while (stack->a)
 	{
 		gnode = find_gnode(content, stack->a);
-		if (!gnode)
-		{
-			printf("⚠️  gnode NULL dans stack A\n");
-			break;
-		}
 		move_gnode_to_top(content, stack, gnode);
 		exec_move(content, stack, gnode);
 	}
 	while (stack->b)
 	{
 		gnode = find_gnode(content, stack->b);
-		if (!gnode)
-		{
-			printf("⚠️  gnode NULL dans stack A\n");
-			break;
-		}
 		move_gnode_b(content, stack, gnode);
 		exec_move_back(content, stack, gnode); //pa
 	}
@@ -84,12 +74,11 @@ void	algo_exec(t_content *content, t_stack *stack)
 
 int	main(int ac, char **av)
 {
-	t_stack *stack;
-	t_node	*n_node;
-	//t_node	*gnode;
-	long	value;
-	t_content *content;
-	int		i;
+	t_stack 	*stack;
+	t_node		*n_node;
+	t_content 	*content;
+	long		value;
+	int			i;
 
 	if (ac < 2)
 		return (1);
@@ -110,6 +99,8 @@ int	main(int ac, char **av)
 		i++;
 	}
 	algo_exec(content, stack);
+	free_stack(stack);
+	free(content);
 	return(0);
 }
 

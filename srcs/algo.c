@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:24:36 by theo              #+#    #+#             */
-/*   Updated: 2025/10/20 17:56:42 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 18:39:40 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_node	*find_gnode(t_content *content, t_node *head)
 	while (current)
 	{
 		fill_content(content, head, current->value);
+		 update_rotation(content,1);
 		final_cost = calculate_cost(content);
 		if (final_cost < min_cost)
 		{
@@ -44,22 +45,14 @@ void	move_gnode_to_top(t_content *content, t_stack *stack, t_node *gnode)
 	int	pos;
 	int	size;
 
-	if (!gnode)
-	{
-		printf("⚠️  move_gnode_to_top: gnode NULL\n");
-		return;
-	}
 	size = stack_size(stack->a);
 	pos = get_stack_pos(stack->a, content, gnode->value);
-	int safety = size + 1;
 		if (pos <= size / 2)
 			while (stack->a != gnode)
 			ra(stack);
 		else
 			while (stack->a != gnode)
 			rev_rotate_a(stack);
-		if (safety <= 0)
-		printf("⚠️  move_gnode_to_top bloqué (boucle infinie évitée)\n");
 }
 
 void	move_gnode_b(t_content *content, t_stack *stack, t_node *gnode)
@@ -77,7 +70,8 @@ void	move_gnode_b(t_content *content, t_stack *stack, t_node *gnode)
 			rev_rotate_b(stack);
 }
 
-/*this func push the solve node to the top of the stack*/
+
+//this func push the solve node to the top of the stack
 void	exec_move(t_content *content,t_stack *stack, t_node *gnode)
 {
 	fill_content(content, stack->a, gnode->value);
