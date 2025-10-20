@@ -4,8 +4,9 @@ CFLAGS = -Wall -Wextra -Werror -I./include
 NAME = push_swap
 LIBFT = include/libft/libft.a
 
-SRCS = srcs/main.c srcs/utils.c srcs/check_error.c srcs/init.c srcs/swap.c srcs/push.c srcs/get_value.c srcs/cost_move.c \
-	srcs/cost_init.c srcs/calculate_cost.c srcs/fill_content.c srcs/algo.c srcs/sort_content.c srcs/rotate.c srcs/rev_rotate.c \
+SRCS = srcs/algo.c srcs/calculate_cost.c srcs/check_error.c srcs/cost_move.c srcs/fill_content.c srcs/get_value.c srcs/init.c \
+		srcs/main.c srcs/push.c srcs/rev_rotate.c srcs/rotate_content_init.c srcs/rotate_content_op.c srcs/rotate.c srcs/sort_content.c \
+		srcs/swap.c srcs/utils.c \
 
 OBJ = $(SRCS:.c=.o)
 

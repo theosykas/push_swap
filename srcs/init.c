@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 17:42:46 by theo              #+#    #+#             */
-/*   Updated: 2025/10/15 17:43:50 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 18:48:42 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,3 @@ t_content	*content_init(int pos, int top, int bottom)
 	content->total_cost = 0;
 	return (content);
 }
-
-//content struct
-/* int	n_rr;
-	int	n_ra;
-	int	n_rb;
-	int	n_rrr;
-	int	n_rra;
-	int	n_rrb;
-	int	total_cost; */

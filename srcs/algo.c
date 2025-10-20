@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:24:36 by theo              #+#    #+#             */
-/*   Updated: 2025/10/20 18:39:40 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 18:56:00 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ void	move_gnode_b(t_content *content, t_stack *stack, t_node *gnode)
 			while (stack->b != gnode)
 			rev_rotate_b(stack);
 }
-
 
 //this func push the solve node to the top of the stack
 void	exec_move(t_content *content,t_stack *stack, t_node *gnode)
