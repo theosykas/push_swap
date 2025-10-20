@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:33:56 by theo              #+#    #+#             */
-/*   Updated: 2025/10/20 16:42:02 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 17:50:07 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,21 @@ void	fill_content(t_content *content,t_node *head, int value)
 	content->bottom = move_down(head, value);
 }
 
-void	update_rotation(t_content *content)
+void	update_rotation(t_content *content, int is_a)
 {
 	t_rotate 		rotate;
 	t_rev_rotate	rev_rotate;		//local variable .
 
-	rotate.n_ra = content->top; // calulate to up
-	rev_rotate.n_rra = content->bottom;
+	if (is_a)
+	{
+		rotate.n_ra = content->top; // calulate to up
+		rev_rotate.n_rra = content->bottom;
+	}
+	else
+	{
+		rotate.n_rb = content->top; // calulate to up
+		rev_rotate.n_rrb = content->bottom;
+	}
 	rotate_cost(&rotate);
 	rev_rotate_cost(&rev_rotate);				//cost_init
 	content->n_ra = rotate.n_ra;

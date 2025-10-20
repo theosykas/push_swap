@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:24:36 by theo              #+#    #+#             */
-/*   Updated: 2025/10/20 17:11:13 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 17:47:01 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,13 +73,15 @@ void	move_gnode_b(t_content *content, t_stack *stack, t_node *gnode)
 void	exec_move(t_content *content,t_stack *stack, t_node *gnode)
 {
 	fill_content(content, stack->a, gnode->value);
-	sort_content(content, stack);
+	update_rotation(content, 1);
+	sort_content(content, stack, 1);
 	push_b(stack);
 }
 
 void	exec_move_back(t_content *content, t_stack *stack, t_node *gnode)
 {
 	fill_content(content, stack->b, gnode->value);
-	sort_content(content, stack);
+	update_rotation(content, 0);
+	sort_content(content, stack, 0);
 	push_a(stack);
 }

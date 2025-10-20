@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:52:19 by theo              #+#    #+#             */
-/*   Updated: 2025/10/20 17:05:31 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 17:45:51 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	move_gnode_to_top(t_content *content, t_stack *stack, t_node *gnode);
 void	move_gnode_b(t_content *content, t_stack *stack, t_node *gnode);
 t_node	*find_gnode(t_content *content, t_node *head);
 
-void	sort_content(t_content *content, t_stack *stack);
+void	sort_content(t_content *content, t_stack *stack, int stack_a);
 
 void	algo_exec(t_content *content, t_stack *stack);
 
@@ -93,11 +93,13 @@ void	rev_rotate_cost(t_rev_rotate *rev_rotate);
 
 //fill
 void	fill_content(t_content *content,t_node *head, int value);
-void	update_rotation(t_content *content);
+void	update_rotation(t_content *content, int is_a);
 
 /*content_rev*/
-void	content_rev_rotate(t_content *content,t_stack *stack);
-void	content_rotate(t_content *content,t_stack *stack);
+void	content_rev_rotate_b(t_content *content, t_stack *stack);
+void	content_rev_rotate_a(t_content *content,t_stack *stack);
+void	content_rotate_a(t_content *content,t_stack *stack);
+void	content_rotate_b(t_content *content, t_stack *stack);
 
 	/*get_value.c*/
 int		get_stack_pos(t_node *head,t_content *content, int value);
