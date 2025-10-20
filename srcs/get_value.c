@@ -6,21 +6,21 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 12:26:18 by theo              #+#    #+#             */
-/*   Updated: 2025/10/17 11:44:59 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 15:37:53 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	stack_size(t_stack *stack)
+int	stack_size(t_node *head)
 {
 	t_node *current;
 	int stack_size;
 
-	if (!stack || !stack->a)
+	if (!head)
 		return (false);
 	stack_size = 0;
-	current = stack->a;
+	current = head;
 	while (current)
 	{
 		stack_size++;

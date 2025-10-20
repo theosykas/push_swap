@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:24:36 by theo              #+#    #+#             */
-/*   Updated: 2025/10/20 13:47:52 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 15:40:39 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	move_gnode_to_top(t_content *content, t_stack *stack, t_node *gnode)
 	int	pos;
 	int	size;
 
-	size = stack_size(stack);
+	size = stack_size(stack->a);
 	pos = get_stack_pos(stack->a, content, gnode->value);
 	printf("stack pos : %d", get_stack_pos(stack->a, content, gnode->value));
 	if (pos <= size / 2)
@@ -62,4 +62,3 @@ void	exec_move(t_content *content,t_stack *stack, t_node *gnode)
 	sort_content(content, stack);
 	push_b(stack);
 }
-

@@ -6,22 +6,40 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:33:56 by theo              #+#    #+#             */
-/*   Updated: 2025/10/20 14:37:26 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 15:59:30 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	fill_content(t_content *content,t_stack *stack,  int value)
-{
+void	fill_content(t_content *content,t_stack *stack, int value)
+{	
 	if (!content || !stack || !stack->a)
 		return ;
 	content->pos = get_stack_pos(stack->a, content, value); // position dans A
-	content->pos = get_stack_pos(stack->a,content, value); //pos in a stack
 	content->top = move_up(stack, value); // cost to up
 	content->bottom = move_down(stack, value);
 }
 
+void	update_rotation(t_content *content)
+{
+	t_rotate 		rotate;
+	t_rev_rotate	rev_rotate;		//local variable .
+
+	rotate.n_ra = content->top; // calulate to up
+	rev_rotate.n_rra = content->bottom;
+	rotate_cost(&rotate);
+	rev_rotate_cost(&rev_rotate);				//cost_init
+	content->n_ra = rotate.n_ra;
+	content->n_rb = rotate.n_rb;
+	content->n_rr = rotate.n_rr;
+	content->n_rra = rev_rotate.n_rra;		//give_move
+	content->n_rrb = rev_rotate.n_rrb;
+	content->n_rrr = rev_rotate.n_rrr;
+	
+}
+
+/*optimisation_cost_finction*/
 void	rotate_cost(t_rotate *rotate)
 {
 	if (rotate->n_ra == 0 || rotate->n_rb == 0) // no combinaison rotation  

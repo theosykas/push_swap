@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:52:19 by theo              #+#    #+#             */
-/*   Updated: 2025/10/20 14:28:39 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 15:58:22 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,16 +88,17 @@ void	rev_rotate_cost(t_rev_rotate *rev_rotate);
 
 //fill
 void	fill_content(t_content *content,t_stack *stack,  int value);
+void	update_rotation(t_content *content);
 
 /*content_rev*/
 void	content_rev_rotate(t_content *content,t_stack *stack);
 void	content_rotate(t_content *content,t_stack *stack);
 
 	/*get_value.c*/
-int	get_stack_pos(t_node *head,t_content *content, int value);
+int		get_stack_pos(t_node *head,t_content *content, int value);
 t_node	*get_min(t_node *head);
 t_node	*get_max(t_node *head);
-int	stack_size(t_stack *stack);
+int		stack_size(t_node *head);
 
 	/*utils.c*/
 int		is_sorted_a(t_stack *stack);
