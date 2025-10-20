@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:52:19 by theo              #+#    #+#             */
-/*   Updated: 2025/10/17 11:53:41 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 12:47:57 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ void	free_stack(t_stack *stack);
 
 /*algo.c*/
 t_node	*move_to_stack(t_content *content, t_stack *stack);
-void	exec_move(t_content *content,t_stack *stack, t_node *g_node);
-void	move_gnode_to_top(t_content *content, t_stack *stack, t_node *g_node);
+void	exec_move(t_content *content,t_stack *stack, t_node *gnode);
+void	move_gnode_to_top(t_content *content, t_stack *stack, t_node *gnode);
 t_node	*find_gnode(t_content *content, t_stack *stack);
 
 void	sort_content(t_content *content, t_stack *stack);

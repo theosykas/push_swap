@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:53:24 by theo              #+#    #+#             */
-/*   Updated: 2025/10/17 10:48:35 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 12:53:33 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,9 @@ int	main(int ac, char **av)
 {
 	t_stack *stack;
 	t_node	*n_node;
-	t_content *content;
+	t_node	*gnode;
 	long	value;
+	t_content *content;
 	int		i;
 
 	if (ac < 2)
@@ -79,6 +80,12 @@ int	main(int ac, char **av)
 		n_node = new_node(value);
 		ft_add_back(&(stack->a), n_node);
 		i++;
+	}
+	while (stack->a)
+	{
+		gnode = find_gnode(content, stack);
+		move_gnode_to_top(content, stack, gnode);
+		exec_move(content, stack, gnode);
 	}
 	return(0);
 }

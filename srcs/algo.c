@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:24:36 by theo              #+#    #+#             */
-/*   Updated: 2025/10/17 11:52:55 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 12:47:38 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,39 +39,26 @@ t_node	*find_gnode(t_content *content, t_stack *stack)
 	//pos <= 2 : ra (top)
 	//pos > 2 : (down) rra
 /*we call g_node in param link to theo fond_gnode function*/
-void	move_gnode_to_top(t_content *content, t_stack *stack, t_node *g_node)
+void	move_gnode_to_top(t_content *content, t_stack *stack, t_node *gnode)
 {
 	int	pos;
 	int	size;
 
 	size = stack_size(stack);
-	pos = get_stack_pos(stack->a, content, g_node->value);
+	pos = get_stack_pos(stack->a, content, gnode->value);
 	if (pos <= size / 2)
-		while (stack->a != g_node)
+		while (stack->a != gnode)
 			ra(stack);
 	else
-		while (stack->a != g_node)
+		while (stack->a != gnode)
 			rev_rotate_a(stack);
 }
 
 /*this func push the solve node to the top of the stack*/
-void	exec_move(t_content *content,t_stack *stack, t_node *g_node)
+void	exec_move(t_content *content,t_stack *stack, t_node *gnode)
 {
-	fill_content(content, stack, g_node->value);
+	fill_content(content, stack, gnode->value);
 	sort_content(content, stack);
 	push_b(stack);
 }
 
-/* t_node	*exec_move(t_content *content,t_stack *stack)
-{
-	t_node	*g_node;
-
-	if (!content || !stack || !stack->a)
-		return (NULL);
-	g_node = find_gnode(content, stack);
-	fill_content(content, stack, g_node->value);;
-	sort_content(content, stack);
-	push_b(stack);
-	return (g_node);
-}
- */
