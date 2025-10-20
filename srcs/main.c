@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:53:24 by theo              #+#    #+#             */
-/*   Updated: 2025/10/20 13:46:36 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 17:12:32 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,15 @@ void	algo_exec(t_content *content, t_stack *stack)
 
 	while (stack->a)
 	{
-		gnode = find_gnode(content, stack);
+		gnode = find_gnode(content, stack->a);
 		move_gnode_to_top(content, stack, gnode);
 		exec_move(content, stack, gnode);
+	}
+	while (stack->b)
+	{
+		gnode = find_gnode(content, stack->b);
+		move_gnode_b(content, stack, gnode);
+		exec_move_back(content, stack, gnode); //pa
 	}
 }
 

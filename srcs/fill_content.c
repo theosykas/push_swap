@@ -6,19 +6,19 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:33:56 by theo              #+#    #+#             */
-/*   Updated: 2025/10/20 15:59:30 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 16:42:02 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	fill_content(t_content *content,t_stack *stack, int value)
-{	
-	if (!content || !stack || !stack->a)
+void	fill_content(t_content *content,t_node *head, int value)
+{
+	if (!content)
 		return ;
-	content->pos = get_stack_pos(stack->a, content, value); // position dans A
-	content->top = move_up(stack, value); // cost to up
-	content->bottom = move_down(stack, value);
+	content->pos = get_stack_pos(head, content, value); // position dans A
+	content->top = move_up(head, value); // cost to up
+	content->bottom = move_down(head, value);
 }
 
 void	update_rotation(t_content *content)

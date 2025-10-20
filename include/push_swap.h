@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:52:19 by theo              #+#    #+#             */
-/*   Updated: 2025/10/20 15:58:22 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/20 17:05:31 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,15 @@ void	free_stack(t_stack *stack);
 /*algo.c*/
 t_node	*move_to_stack(t_content *content, t_stack *stack);
 void	exec_move(t_content *content,t_stack *stack, t_node *gnode);
+void	exec_move_back(t_content *content, t_stack *stack, t_node *gnode);
+//void	move_gnode_to_top(t_content *content, t_stack *stack, t_node *gnode);
 void	move_gnode_to_top(t_content *content, t_stack *stack, t_node *gnode);
-t_node	*find_gnode(t_content *content, t_stack *stack);
+void	move_gnode_b(t_content *content, t_stack *stack, t_node *gnode);
+t_node	*find_gnode(t_content *content, t_node *head);
 
 void	sort_content(t_content *content, t_stack *stack);
+
+void	algo_exec(t_content *content, t_stack *stack);
 
 /*calculate_cost*/
 int	calculate_cost(t_content *content);
@@ -87,7 +92,7 @@ void	rotate_cost(t_rotate *rotate);
 void	rev_rotate_cost(t_rev_rotate *rev_rotate);
 
 //fill
-void	fill_content(t_content *content,t_stack *stack,  int value);
+void	fill_content(t_content *content,t_node *head, int value);
 void	update_rotation(t_content *content);
 
 /*content_rev*/
@@ -122,13 +127,13 @@ void	rotate_content(t_content *content, t_rotate *res, int pos);
 void	rev_rotate_content(t_content *content, t_rev_rotate *res, int pos);
 
 	/*move.c*/
-int	move_up(t_stack *stack, int current);
-int	move_down(t_stack *stack, int current);
+int	move_up(t_node *head, int current);
+int	move_down(t_node *head, int current);
 
 /*-----NODE_AND_STACK---------*/
 
 	/*node_utils.c*/
-t_node	*gnode_index(t_stack *stack, int value);
+t_node	*gnode_index(t_node *head, int value);
 	/*init.c*/
 t_node	*new_node(int value);
 t_stack *stack_init(void);
