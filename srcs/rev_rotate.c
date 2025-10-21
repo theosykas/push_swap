@@ -6,13 +6,13 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 23:45:29 by theo              #+#    #+#             */
-/*   Updated: 2025/10/21 14:54:09 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/21 15:08:58 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	rev_rotate(t_node **head)
+int rev_rotate(t_node **head)
 {
 	t_node	*lst;
 	t_node	*prev;
@@ -42,12 +42,12 @@ void	rev_rotate_a(t_stack *stack)
 void	rev_rotate_b(t_stack *stack)
 {
 	rev_rotate(&stack->b);
-	ft_putstr_fd("rra\n", 1);
+	ft_putstr_fd("rrb\n", 1);
 }
 
 void	rev_rotate_ab(t_stack *stack)
 {
 	rev_rotate(&stack->a);
 	rev_rotate(&stack->b);
-	ft_putstr_fd("rra\n", 1);
+	ft_putstr_fd("rrr\n", 1);
 }

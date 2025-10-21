@@ -29,18 +29,19 @@ RESET      = \033[0m
 
 $(NAME): $(OBJS)
 		@$(AR) $(NAME) $(OBJS)
-		@echo "$(GREEN)Libft compiled$(RESET)"
+		@echo -e "$(GREEN)Libft compiled$(RESET)"
 
 all: $(NAME)
 
 clean:
 	@$(RM) $(OBJS) $(BONUS_OBJS)
-	@echo "$(RED)Object files removed.$(RESET)"
+	@echo -e "$(RED)Object files removed.$(RESET)"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "$(RED)libft.a removed.$(RESET)"
+	@echo -e "$(RED)libft.a removed.$(RESET)"
 
-re: fclean all
+re: fclean
+	@$(MAKE) all
 
-.PHONY: all clean fclean re 
+.PHONY: all clean fclean re
