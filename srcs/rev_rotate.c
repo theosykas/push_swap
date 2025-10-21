@@ -12,21 +12,24 @@
 
 #include "../include/push_swap.h"
 
-int	rev_rotate(t_node **head)
+int rev_rotate(t_node **head)
 {
-	t_node	*lst;
+    t_node *prev;
+    t_node *last;
 
-	if (!*head || !(*head)->next)
-		return (false);
-	lst = *head;
-	while (lst->next)
-		lst = lst->next;
-	lst->prev->next = NULL; //discon
-	lst->next = *head; // lst = top
-	lst->prev = NULL; //av ls NULL
-	(*head)->prev = lst;
-	*head = lst;
-	return (true);
+    if (!head || !*head || !(*head)->next)
+        return (0);
+    prev = NULL;
+    last = *head;
+    while (last->next)
+    {
+        prev = last;
+        last = last->next;
+    }
+    prev->next = NULL;
+    last->next = *head;
+    *head      = last;
+    return (1);
 }
 
 void	rev_rotate_a(t_stack *stack)
@@ -38,12 +41,12 @@ void	rev_rotate_a(t_stack *stack)
 void	rev_rotate_b(t_stack *stack)
 {
 	rev_rotate(&stack->b);
-	ft_putstr_fd("rra\n", 1);
+	ft_putstr_fd("rrb\n", 1);
 }
 
 void	rev_rotate_ab(t_stack *stack)
 {
 	rev_rotate(&stack->a);
 	rev_rotate(&stack->b);
-	ft_putstr_fd("rra\n", 1);
+	ft_putstr_fd("rrr\n", 1);
 }

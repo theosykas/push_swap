@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I./include
+CFLAGS = -Wall -Wextra -Werror -I./include -g3 #-fsanitize=address
 
 NAME = push_swap
 LIBFT = include/libft/libft.a
@@ -20,12 +20,11 @@ include/libft/libft.a:
 
 clean:
 	rm -f $(OBJ)
-	$(MAKE) -C include/libft clean
 
 fclean: clean
 	rm -f $(NAME)
-	$(MAKE) -C include/libft fclean
 
-re: fclean all
+re: fclean
+	@$(MAKE) all
 
 .PHONY : clean fclean all re
