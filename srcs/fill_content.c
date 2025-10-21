@@ -26,6 +26,8 @@ void	update_rotation(t_content *content, int is_a)
 	t_rotate 		rotate;
 	t_rev_rotate	rev_rotate;		//local variable .
 
+	ft_memset(&rotate, 0, sizeof(t_rotate));
+	ft_memset(&rev_rotate, 0, sizeof(t_rev_rotate));
 	if (is_a)
 	{
 		rotate.n_ra = content->top; // calulate to up
@@ -44,13 +46,13 @@ void	update_rotation(t_content *content, int is_a)
 	content->n_rra = rev_rotate.n_rra;		//give_move
 	content->n_rrb = rev_rotate.n_rrb;
 	content->n_rrr = rev_rotate.n_rrr;
-	
+
 }
 
 /*optimisation_cost_finction*/
 void	rotate_cost(t_rotate *rotate)
 {
-	if (rotate->n_ra == 0 || rotate->n_rb == 0) // no combinaison rotation  
+	if (rotate->n_ra == 0 || rotate->n_rb == 0) // no combinaison rotation
 	{
 		rotate->n_rr = 0;
 		return ;

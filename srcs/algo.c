@@ -20,6 +20,7 @@ t_node	*find_gnode(t_content *content, t_node *head)
 	int			min_cost;
 
 	current = head; //tete de lst
+	solve_node = NULL;
 	min_cost = INT_MAX;
 	while (current)
 	{

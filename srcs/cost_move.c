@@ -33,7 +33,7 @@ int	move_up(t_node *head, int current)
 	int	i;
 	t_node *tmp;
 
-	i = 0;	
+	i = 0;
 	if (!head)
 		return (-1);
 	tmp = gnode_index(head, current);

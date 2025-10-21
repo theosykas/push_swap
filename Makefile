@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I./include -g3 #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -I./include -g3
 
 NAME = push_swap
 LIBFT = include/libft/libft.a
