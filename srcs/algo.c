@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:24:36 by theo              #+#    #+#             */
-/*   Updated: 2025/10/20 22:00:53 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/21 15:01:27 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_node	*find_gnode(t_content *content, t_node *head)
 	int			final_cost;
 	int			min_cost;
 
+	solve_node = NULL;
 	current = head; //tete de lst
 	min_cost = INT_MAX;
 	while (current)
@@ -74,8 +75,8 @@ void	move_gnode_b(t_content *content, t_stack *stack, t_node *gnode)
 void	exec_move(t_content *content,t_stack *stack, t_node *gnode)
 {
 	fill_content(content, stack->a, gnode->value);
-	update_rotation(content, 1);
-	sort_content(content, stack, 1);
+	update_rotation(content, true);
+	sort_content(content, stack, true);
 	push_b(stack);
 	return ;
 }
@@ -83,8 +84,8 @@ void	exec_move(t_content *content,t_stack *stack, t_node *gnode)
 void	exec_move_back(t_content *content, t_stack *stack, t_node *gnode)
 {
 	fill_content(content, stack->b, gnode->value);
-	update_rotation(content, 0);
-	sort_content(content, stack, 0);
+	update_rotation(content, false);
+	sort_content(content, stack, false);
 	push_a(stack);
 	return ;
 }

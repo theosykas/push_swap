@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 17:33:56 by theo              #+#    #+#             */
-/*   Updated: 2025/10/20 17:50:07 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/21 14:57:31 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ void	update_rotation(t_content *content, int is_a)
 {
 	t_rotate 		rotate;
 	t_rev_rotate	rev_rotate;		//local variable .
+	
 
+	ft_memset(&rotate, 0, sizeof(t_rotate));
+	ft_memset(&rev_rotate, 0, sizeof(t_rev_rotate));
 	if (is_a)
 	{
 		rotate.n_ra = content->top; // calulate to up

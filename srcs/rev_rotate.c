@@ -6,7 +6,7 @@
 /*   By: theo <theo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 23:45:29 by theo              #+#    #+#             */
-/*   Updated: 2025/10/20 20:13:33 by theo             ###   ########.fr       */
+/*   Updated: 2025/10/21 14:54:09 by theo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,22 @@
 int	rev_rotate(t_node **head)
 {
 	t_node	*lst;
+	t_node	*prev;
 
-	if (!*head || !(*head)->next)
+	if (!head || !*head || !(*head)->next)
 		return (false);
+	prev = NULL;
 	lst = *head;
 	while (lst->next)
+	{
+		prev = lst;
 		lst = lst->next;
-	lst->prev->next = NULL; //discon
+	}
+	prev->next = NULL; //discon
 	lst->next = *head; // lst = top
 	lst->prev = NULL; //av ls NULL
-	(*head)->prev = lst;
 	*head = lst;
-	return (true);
+	return (1);
 }
 
 void	rev_rotate_a(t_stack *stack)
